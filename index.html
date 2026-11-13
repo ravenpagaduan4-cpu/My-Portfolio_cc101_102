@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Personal Portfolio</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf2f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* LEFT NAVIGATION */
+        .sidebar {
+            background-color: #123456;
+            color: white;
+            width: 220px;
+            padding: 25px 15px;
+            box-sizing: border-box;
+            position: fixed;
+            height: 100%;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 13px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .sidebar a:hover {
+            background-color: #2874a6;
+        }
+
+        /* RIGHT CONTENT */
+        .main {
+            margin-left: 220px;
+            padding: 30px;
+            width: calc(100% - 220px);
+        }
+
+        .header {
+            background-color: #123456;
+            color: white;
+            text-align: center;
+            padding: 35px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        /* TWO CARDS PER ROW */
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #2874a6;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            color: #123456;
+            margin-top: 0;
+        }
+
+        .full {
+            grid-column: span 2;
+        }
+
+        pre {
+            background-color: #222;
+            color: #00ff99;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 13px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #555;
+        }
+
+        /* SMALL SCREEN */
+        @media screen and (max-width: 700px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .container {
+                display: block;
+            }
+
+            .main {
+                margin-left: 0;
+                width: auto;
+                padding: 15px;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .full {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    
+    <div class="sidebar">
+        <h2>MY PORTFOLIO</h2>
+
+        <a href="#home">Home</a>
+        <a href="#personal">Personal Information</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#java">Java Code</a>
+    </div>
+
+    
+    <div class="main">
+
+        <div class="header" id="home">
+            <h1>My Personal Portfolio</h1>
+            <p>First Year Information Technology Student</p>
+        </div>
+
+        <div class="content">
+
+            
+            <div class="card" id="personal">
+                <h2>Personal Information</h2>
+                <p><b>Name:</b> Raven P. Pagaduan</p>
+                <p><b>Address:</b> Caballero, Guimba, Nueva Ecija</p>
+                <p><b>Email:</b>ravenpagaduan4@gmail.com</p>
+                <p><b>Contact:</b> 09276334704</p>
+                <p><b>Course:</b> BS Information Technology</p>
+            </div>
+
+           
+            <div class="card" id="education">
+                <h2>Educational Background</h2>
+                <p><b>College:</b> Our Lady of the Sacred Heart College</p>
+                <p><b>Course:</b> Bachelor of Science in Information Technology</p>
+                <p><b>Year Level:</b> First Year</p>
+                <p><b>Senior High School:</b> Triala National High School</p>
+                <p><b>Strand:</b> TVL-ICT</p>
+            </div>
+
+            
+            <div class="card" id="skills">
+                <h2>My Skills</h2>
+                <ul>
+                    <li>Basic HTML</li>
+                    <li>Basic CSS</li>
+                    <li>Basic Java Programming</li>
+                    <li>Problem Solving</li>
+                    <li>Willingness to Learn</li>
+                </ul>
+            </div>
+
+           
+            <div class="card" id="java">
+                <h2>Java Code</h2>
+                <p><b>Language:</b> Java</p>
+                <p><b>Program:</b> Number Guessing Game</p>
+                <p>This is my Java programming project.</p>
+            </div>
+
+            
+            <div class="card full">
+                <h2>Java Source Code</h2>
+
+                <pre><code>import java.util.Scanner;
+
+public class RavenGame {
+    public static void main(String[] args) {
+
+        Scanner Ven = new Scanner(System.in);
+
+        int r = 7;
+        int a = 0;
+        int v = 0;
+        int e = 5;
+        int n = e;
+
+        System.out.println("==============================");
+        System.out.println("     NUMBER GUESSING GAME");
+        System.out.println("==============================");
+
+        System.out.println("Guess the number from 1 to 10.");
+        System.out.println("You have 5 tries.");
+
+        while (n > 0 && a != r) {
+
+            System.out.print("\nEnter your guess: ");
+            a = Ven.nextInt();
+
+            v = v + 1;
+            n = n - 1;
+
+            if (a == r) {
+                System.out.println("Correct! You win!");
+            }
+            else if (a < r) {
+                System.out.println("Too low. Try again.");
+            }
+            else {
+                System.out.println("Too high. Try again.");
+            }
+
+            System.out.println("Tries left: " + n);
+        }
+
+        if (a != r) {
+            System.out.println("Game over!");
+            System.out.println("The secret number was " + r);
+        }
+
+        System.out.println("Number of tries used: " + v);
+
+       
+    }
+}</code></pre>
+            </div>
+
+        </div>
+
+        <footer>
+            <p>© 2026 My Personal Portfolio</p>
+        </footer>
+
+    </div>
+</div>
+
+</body>
+</html>
